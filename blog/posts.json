@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "slug": "consistent-hashing",
+      "title": "Understanding Consistent Hashing: A Key to Scalable Distributed Systems",
+      "date": "2023-10-04",
+      "dateLabel": "Oct 4, 2023",
+      "readTime": "6 min read",
+      "excerpt": "How consistent hashing distributes data across dynamic nodes with minimal reassignment — and why it matters for caches, load balancers, and databases.",
+      "author": "alanturrr1703"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Technical writing on distributed systems, DevOps, and software engineering.">
+  <meta name="description" content="Blog post">
   <title>Blog · Harshit Thakkar</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,22 +19,23 @@
   </header>
 
   <main>
-    <section class="section" style="padding-top: 1rem;">
-      <h1 class="section-title">Blog</h1>
-      <p class="entry-detail" style="margin-bottom: 2rem;">
-        Notes on distributed systems, scalability, and building reliable software.
-      </p>
-
-      <div id="blog-list" class="entries entries--compact">
-        <p class="entry-detail oss-empty">Loading posts…</p>
+    <article class="blog-post">
+      <header class="blog-post-header">
+        <p class="blog-post-back"><a href="index.html">&larr; All posts</a></p>
+        <h1 id="post-title" class="blog-post-title">Loading…</h1>
+        <p id="post-meta" class="blog-post-meta"></p>
+      </header>
+      <div id="post-body" class="blog-post-body">
+        <p class="entry-detail oss-empty">Loading post…</p>
       </div>
-    </section>
+    </article>
   </main>
 
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> · <a href="../index.html">Harshit Thakkar</a></p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
