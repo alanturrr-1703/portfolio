@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How consistent hashing distributes data across dynamic nodes with minimal reassignment in scalable distributed systems.">
+  <title>Understanding Consistent Hashing · Blog</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="index.html" class="nav-link nav-link--active">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="blog-post">
+      <header class="blog-post-header">
+        <p class="blog-post-back"><a href="index.html">&larr; All posts</a></p>
+        <h1 class="blog-post-title">Understanding Consistent Hashing: A Key to Scalable Distributed Systems</h1>
+        <p class="blog-post-meta">Oct 4, 2023 · 6 min read · alanturrr1703</p>
+      </header>
+
+      <div class="blog-post-body">
+        <p>
+          Today we're exploring an essential concept in distributed systems: consistent hashing.
+          If you're working with scalable distributed systems, load balancing, or large-scale caching
+          systems, consistent hashing is a fundamental technique to understand.
+        </p>
+        <p>
+          Let's break down what consistent hashing is, how it works, and why it's so critical
+          for scalable architectures.
+        </p>
+
+        <h2>What is Consistent Hashing?</h2>
+        <p>
+          Consistent hashing is a technique used to distribute data across a dynamic set of nodes
+          (servers, machines, or caches) in a way that minimizes disruption when nodes are added
+          or removed. Unlike traditional hashing methods, consistent hashing ensures that only a
+          small portion of data needs to be reassigned when the system's capacity changes.
+        </p>
+        <p>
+          This concept is particularly useful in distributed systems where the number of nodes can
+          change frequently due to scaling, node failures, or upgrades.
+        </p>
+
+        <h2>The Problem with Traditional Hashing</h2>
+        <p>
+          In traditional hashing, a hash function is used to map data (like keys) to nodes. For
+          example, if you have 5 servers and want to store some data, you might apply a hash
+          function to each key and assign the result modulo 5 (the number of servers). But there's
+          a big downside:
+        </p>
+        <p>
+          <strong>Node changes:</strong> If you add or remove a server, all the data may need to be
+          rehashed and redistributed among the new set of servers. This is highly inefficient,
+          especially in large-scale systems.
+        </p>
+        <p>
+          Consistent hashing solves this problem by ensuring that when nodes are added or removed,
+          only a small fraction of the keys need to be moved to new nodes, keeping the system
+          scalable and efficient.
+        </p>
+
+        <h2>How Consistent Hashing Works</h2>
+
+        <h3>The Hash Ring</h3>
+        <p>
+          In consistent hashing, both the data (keys) and the nodes (servers) are hashed onto a
+          virtual hash ring. The hash function typically produces a large number of possible values,
+          and these values form a circular space — this is the "ring."
+        </p>
+        <p>Here's how it works:</p>
+        <ol>
+          <li><strong>Hashing nodes:</strong> Each node is hashed to a point on the ring using a hash function (e.g., MD5, SHA-1). Each node is assigned a position on the ring based on its hash value.</li>
+          <li><strong>Hashing keys:</strong> Similarly, each data key is hashed to a point on the ring.</li>
+          <li><strong>Assigning keys to nodes:</strong> Once a key is hashed to the ring, it is assigned to the first node that comes after the key on the ring in a clockwise direction. If the key's position is greater than all nodes, it wraps around to the first node.</li>
+        </ol>
+        <p>
+          This way, each node is responsible for the data between itself and the previous node on
+          the ring.
+        </p>
+
+        <h3>Example of Consistent Hashing</h3>
+        <p>Let's consider a simple example:</p>
+        <ul>
+          <li>You have three nodes: Node A, Node B, and Node C.</li>
+          <li>You apply a hash function to these nodes, and each node is placed at a point on the ring.</li>
+          <li>Next, you hash the keys (e.g., Key 1, Key 2, etc.), and each key is placed on the ring.</li>
+        </ul>
+        <p>For instance:</p>
+        <ul>
+          <li>Key 1 is hashed and placed on the ring, and it's assigned to the next node clockwise (e.g., Node B).</li>
+          <li>Key 2 is hashed and assigned to Node C.</li>
+        </ul>
+        <p>
+          When you add or remove nodes, only the keys that would be affected by that specific node
+          change are reassigned.
+        </p>
+
+        <h3>Handling Node Changes</h3>
+        <p>
+          <strong>Adding a node:</strong> When a new node is added, it is hashed to a point on the ring.
+          Only the keys that map between the new node's position and its predecessor need to be
+          reassigned to the new node. All other keys remain unaffected.
+        </p>
+        <p>
+          <strong>Removing a node:</strong> If a node is removed, the keys that were mapped to that
+          node are reassigned to the next node clockwise. All other keys stay where they are,
+          minimizing data movement.
+        </p>
+
+        <h3>Virtual Nodes (VNodes)</h3>
+        <p>
+          To prevent uneven data distribution (where some nodes get more keys than others), consistent
+          hashing often uses virtual nodes. Instead of hashing a single node to one position on the
+          ring, the node is hashed to multiple positions.
+        </p>
+        <ul>
+          <li>Each physical node is assigned several "virtual nodes" (VNodes), and each virtual node is placed at different points on the ring.</li>
+          <li>This leads to a more balanced distribution of keys because each node effectively handles multiple smaller portions of the ring.</li>
+        </ul>
+        <p>
+          Virtual nodes improve load balancing, especially in systems where nodes may have different
+          capacities.
+        </p>
+
+        <h2>Why Consistent Hashing is Important</h2>
+        <ol>
+          <li><strong>Scalability</strong> — As distributed systems grow, adding or removing nodes is common. Consistent hashing ensures that only a small portion of data is moved when this happens, making it easy to scale without costly rehashing of the entire data set.</li>
+          <li><strong>Fault tolerance</strong> — When a node fails, only the data handled by that node is redistributed. This minimizes the impact of node failures, making the system more resilient.</li>
+          <li><strong>Load balancing</strong> — By distributing keys across multiple nodes (especially with virtual nodes), consistent hashing ensures that the load is balanced among the nodes.</li>
+          <li><strong>Decentralization</strong> — Consistent hashing does not require a central coordinator. Nodes can join or leave independently, and the hash function handles the data redistribution.</li>
+        </ol>
+
+        <h2>Use Cases of Consistent Hashing</h2>
+        <p>
+          Consistent hashing is widely used in various distributed systems, especially in applications
+          where nodes are frequently added or removed. Some key use cases include:
+        </p>
+        <ol>
+          <li><strong>Distributed caching</strong> (e.g., Memcached, Redis) — distributes cached data across multiple cache nodes with minimal disruption when nodes change.</li>
+          <li><strong>Load balancers</strong> — distributes incoming requests across servers; when servers are added or removed, request distribution adjusts with minimal disruption.</li>
+          <li><strong>Distributed databases</strong> (e.g., Cassandra, DynamoDB) — spreads data across nodes for horizontal scaling without excessive rebalancing.</li>
+          <li><strong>Content delivery networks (CDNs)</strong> — distributes web content across geographically distributed servers; only a small portion of content needs redistribution when a server changes.</li>
+        </ol>
+
+        <h2>Wrapping It Up</h2>
+        <p>
+          Consistent hashing is a critical technique for building scalable, fault-tolerant distributed
+          systems. By minimizing data movement when nodes are added or removed, consistent hashing
+          ensures that systems remain performant and resilient under changing conditions.
+        </p>
+        <p>
+          Whether you're working with distributed caches, databases, or load balancers, understanding
+          and implementing consistent hashing can greatly enhance the scalability and efficiency of
+          your system.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> · <a href="../index.html">Harshit Thakkar</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

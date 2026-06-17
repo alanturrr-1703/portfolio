@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Technical writing on distributed systems, DevOps, and software engineering.">
+  <title>Blog · Harshit Thakkar</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="index.html" class="nav-link nav-link--active">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: 1rem;">
+      <h1 class="section-title">Blog</h1>
+      <p class="entry-detail" style="margin-bottom: 2rem;">
+        Notes on distributed systems, scalability, and building reliable software.
+      </p>
+
+      <div class="entries entries--compact">
+        <article class="entry blog-card">
+          <div class="entry-header">
+            <h2 class="entry-title">
+              <a href="consistent-hashing.html">Understanding Consistent Hashing: A Key to Scalable Distributed Systems</a>
+            </h2>
+            <span class="entry-meta">Oct 4, 2023 · 6 min read</span>
+          </div>
+          <p class="entry-detail">
+            How consistent hashing distributes data across dynamic nodes with minimal
+            reassignment — and why it matters for caches, load balancers, and databases.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> · <a href="../index.html">Harshit Thakkar</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
