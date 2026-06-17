@@ -21,11 +21,6 @@
     return { meta, body: raw.slice(match[0].length) };
   }
 
-  function formatMeta(post) {
-    const parts = [post.readTime, post.author].filter(Boolean);
-    return parts.join(" · ");
-  }
-
   function renderPostList(posts, container) {
     container.replaceChildren();
 
