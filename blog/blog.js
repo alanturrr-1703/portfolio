@@ -22,7 +22,7 @@
   }
 
   function formatMeta(post) {
-    const parts = [post.dateLabel, post.readTime, post.author].filter(Boolean);
+    const parts = [post.readTime, post.author].filter(Boolean);
     return parts.join(" · ");
   }
 
@@ -45,7 +45,7 @@
           <h2 class="entry-title">
             <a href="post.html?slug=${encodeURIComponent(post.slug)}">${post.title}</a>
           </h2>
-          <span class="entry-meta">${post.dateLabel}${post.readTime ? ` · ${post.readTime}` : ""}</span>
+          <span class="entry-meta">${post.readTime || ""}</span>
         </div>
         <p class="entry-detail">${post.excerpt}</p>
       `;
@@ -91,15 +91,7 @@
       const { meta, body } = parseFrontmatter(raw);
 
       titleEl.textContent = meta.title || slug;
-      metaEl.textContent = [
-        meta.date ? new Date(`${meta.date}T12:00:00`).toLocaleDateString("en-US", {
-          month: "short",
-          day: "numeric",
-          year: "numeric",
-        }) : "",
-        meta.readTime,
-        meta.author || "alanturrr1703",
-      ]
+      metaEl.textContent = [meta.readTime, meta.author || "alanturrr1703"]
         .filter(Boolean)
         .join(" · ");
 
