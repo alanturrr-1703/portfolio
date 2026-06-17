@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Software engineer focused on distributed systems, DevOps, and competitive programming.">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#oss" class="nav-link">Open Source</a>
+      <a href="#skills" class="nav-link">Skills</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-label">Software Engineer</p>
+          <h1 class="hero-name">Harshit Thakkar</h1>
+          <p class="hero-bio">
+            Graduate student in Computer Science with a focus on
+            <strong>distributed systems</strong>, <strong>DevOps</strong>, and
+            <strong>competitive programming</strong>. I enjoy building reliable
+            backends, contributing to open source, and solving hard algorithmic problems.
+          </p>
+          <div class="hero-links">
+            <a href="mailto:your.email@example.com">Email</a>
+            <a href="https://github.com/alanturrr-1703" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://leetcode.com/yourusername" target="_blank" rel="noopener noreferrer">LeetCode</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+          </div>
+        </div>
+        <figure class="hero-photo">
+          <img src="images/profile.jpg" alt="Harshit Thakkar" width="220" height="220"
+               onerror="this.onerror=null;this.src='images/placeholder.svg';">
+        </figure>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="entries">
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">Master of Science, Computer Science</h3>
+            <span class="entry-meta">University of Washington</span>
+          </div>
+          <p class="entry-detail">GPA: 3.7 / 4.00</p>
+          <p class="entry-detail">
+            Coursework: Distributed Systems, Advanced Data Structures, Algorithms,
+            Software Architecture, Parallel Computing
+          </p>
+        </article>
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">Bachelor of Technology, Information Technology</h3>
+            <span class="entry-meta">Pandit Deendayal Energy University</span>
+          </div>
+          <p class="entry-detail">GPA: 8.2 / 10.00</p>
+          <p class="entry-detail">
+            Coursework: Object-Oriented Programming, Operating Systems,
+            Database Management, Machine Learning
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2 class="section-title">Experience</h2>
+      <div class="entries">
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">Software Engineer (Intern)</h3>
+            <span class="entry-meta">Jan 2025 — May 2025</span>
+          </div>
+          <p class="entry-org">Blueinfy · Ahmedabad</p>
+          <ul class="entry-list">
+            <li>Engineered a custom JavaScript Concrete Syntax Tree parser achieving 98% accuracy, integrated with Semgrep's workflow to automate static code analysis and review code quality across 100k+ lines of Gosu.</li>
+            <li>Applied rigorous live debugging to diagnose complex technical bottlenecks in *nix environments, delivering actionable, well-documented logic that enhanced security governance and reduced manual audit cycles by 25%.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">Software Engineer (Intern)</h3>
+            <span class="entry-meta">May 2024 — Aug 2024</span>
+          </div>
+          <p class="entry-org">Level Supermind · Mumbai</p>
+          <ul class="entry-list">
+            <li>Consolidated freeze streak and regular streak microservices into a single database structure by modeling the freeze streak as a standard activity, streamlining PostgreSQL pipelines to ensure continuous data availability.</li>
+            <li>Analyzed and optimized core algorithms to reduce computation from quadratic to log-linear time, slashing latency from 1.2s to 150ms to strictly fulfill a 1-second API contract for iOS frontends.</li>
+            <li>Packaged scalable architectures via Docker to reliably support 10,000+ concurrent requests, establishing end-to-end ownership of observability metrics to drive a 30% increase in user engagement.</li>
+            <li>Maintained comprehensive operational runbooks for live debugging and 24/7 support, ensuring seamless adoption across global engineering squads.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section-title">Technical Projects</h2>
+      <div class="entries">
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">
+              <a href="https://github.com/alanturrr-1703/brain-map" target="_blank" rel="noopener noreferrer">Brain Map</a>
+            </h3>
+            <span class="entry-meta">TypeScript · Java · Spring Boot · WebGL · MongoDB</span>
+          </div>
+          <ul class="entry-list">
+            <li>Collaborative infinite-canvas mind-map with a WebGL frontend, quadtree-backed spatial engine, and local-first map storage on the user's device.</li>
+            <li>Spring Boot REST API with Google OAuth and MongoDB; documented GCP and DigitalOcean deployment workflows.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">
+              <a href="https://github.com/alanturrr-1703/quadtree-database" target="_blank" rel="noopener noreferrer">Quadtree Database</a>
+            </h3>
+            <span class="entry-meta">Java · Spatial Indexing · Custom Storage Engine</span>
+          </div>
+          <ul class="entry-list">
+            <li>Desktop map database suite with a custom <code>.plusmap</code> binary format, quad-based spatial indexing, and import/query engine for terrain and road features.</li>
+            <li>Core and engine modules complete with 47 passing tests; powers the spatial backend behind Brain Map.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">
+              <a href="https://github.com/alanturrr-1703/LockIn" target="_blank" rel="noopener noreferrer">LockIn</a>
+            </h3>
+            <span class="entry-meta">Java · JavaFX · Ollama · Chrome Extension</span>
+          </div>
+          <ul class="entry-list">
+            <li>Local-first YouTube content filter using offline LLMs to classify recommendations against a user profile and block irrelevant tiles — zero cloud dependency.</li>
+            <li>JavaFX desktop app controls the Chrome extension via localhost IPC, with profile sync, live stats, and sub-180ms classification latency.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">
+              <a href="https://github.com/alanturrr-1703/Code-cage" target="_blank" rel="noopener noreferrer">Code-cage</a>
+            </h3>
+            <span class="entry-meta">Java · JavaFX · Multiprocess Execution</span>
+          </div>
+          <ul class="entry-list">
+            <li>Multiprocess code execution platform running Java, Python, C++, JavaScript, and Bash in isolated OS processes with real-time stdout/stderr streaming.</li>
+            <li>Enforces per-run time and memory limits with TLE killing, live process history, and Chaos Monkey compatibility for resilience testing.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">
+              <a href="https://github.com/alanturrr-1703/simian-army" target="_blank" rel="noopener noreferrer">Simian Army</a>
+            </h3>
+            <span class="entry-meta">Python · Docker Swarm · Grafana · Chaos Engineering</span>
+          </div>
+          <ul class="entry-list">
+            <li>Built a Simian Army suite for a university distributed-systems course — chaos, latency, conformity, and load monkeys to stress-test a social-media microservices app under simulated production failures.</li>
+            <li>Instrumented services with observability tooling and validated resilience patterns; monkey scripts live in the public repo — the full university social-media app stays private.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">
+              <a href="https://github.com/alanturrr-1703/Rubiks-Cube-Solver-master" target="_blank" rel="noopener noreferrer">Rubik's Cube Solver</a>
+            </h3>
+            <span class="entry-meta">Java · Swing · Algorithms</span>
+          </div>
+          <ul class="entry-list">
+            <li>Swing GUI that solves scrambled cubes using the beginner's method, with text-scramble and per-face color input modes.</li>
+            <li>Animates the solve step-by-step with pause, rewind, speed control, and move notation highlighting for learning standard cube notation.</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 class="subsection-title">Upcoming</h3>
+      <div class="entries entries--compact">
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">
+              <a href="https://github.com/alanturrr-1703/research-assistant" target="_blank" rel="noopener noreferrer">Research Assistant</a>
+            </h3>
+            <span class="entry-meta">Upcoming · Java · Gemini</span>
+          </div>
+          <p class="entry-detail">
+            Browser extension that uses Gemini 2.5 to assist with research workflows — summarizing papers,
+            answering questions in context, and streamlining literature review.
+          </p>
+        </article>
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">
+              <a href="https://github.com/alanturrr-1703/LexiKV" target="_blank" rel="noopener noreferrer">LexiKV</a>
+            </h3>
+            <span class="entry-meta">Upcoming · Java · LLM Infrastructure</span>
+          </div>
+          <p class="entry-detail">
+            Lightweight key-value store for LLM query caching and retrieval — designed for simple,
+            fast lookup of prior prompts and responses in local agent workflows.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="oss" class="section">
+      <h2 class="section-title">Open Source Contributions</h2>
+      <p id="oss-status" class="oss-status">Loading from GitHub…</p>
+      <div id="oss-contributions" class="entries">
+        <p class="entry-detail oss-empty">Fetching pull requests…</p>
+      </div>
+      <div id="oss-upcoming"></div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section-title">Skills &amp; Activities</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <p>Python, Go, Java, C/C++, SQL, Bash/Shell, JavaScript</p>
+        </div>
+        <div class="skill-group">
+          <h3>Infrastructure &amp; OS</h3>
+          <p>Linux/UNIX, Kubernetes, AWS, Docker, TCP/IP Networking, Load Balancing</p>
+        </div>
+        <div class="skill-group">
+          <h3>Databases &amp; AI</h3>
+          <p>MySQL, PostgreSQL, Local LLMs (Ollama), Prompt Engineering, Agent Orchestration</p>
+        </div>
+        <div class="skill-group">
+          <h3>DevOps &amp; SRE</h3>
+          <p>Terraform (IaC), CI/CD, Observability, Debugging, Chaos Engineering</p>
+        </div>
+      </div>
+      <div class="entries entries--compact">
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">Competitive Programming</h3>
+            <span class="entry-meta">LeetCode · Rating 1944</span>
+          </div>
+          <p class="entry-detail">
+            Active algorithmic problem solver with 400+ complex challenges solved,
+            focusing on distributed systems data structures, dynamic programming, and graph theory.
+          </p>
+        </article>
+        <article class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">MG Science College — Bootcamp Lead</h3>
+          </div>
+          <p class="entry-detail">
+            Hosted an intensive coding bootcamp instructing students on Python, core software
+            engineering principles, machine learning fundamentals, and writing clean, scalable code.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> · Built with plain HTML &amp; CSS</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="oss.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
